@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+/* Maakt het scrollen tussen pagina's soepel */
 html {
   scroll-behavior: smooth;
 }
@@ -24,6 +25,7 @@ img {
   user-select: none;
 }
 
+/* Op grote schermen is de desktopversie zichtbaar */
 .desktop-only {
   display: block;
 }
@@ -32,6 +34,7 @@ img {
   display: none;
 }
 
+/* Onder 650px wordt de mobiele versie gebruikt */
 @media (max-width: 650px) {
   .desktop-only {
     display: none;

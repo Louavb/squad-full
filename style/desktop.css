@@ -1,3 +1,4 @@
+/* Laat de desktoppagina's automatisch naar elkaar springen */
 html {
   scroll-snap-type: y mandatory;
 }
@@ -5,31 +6,23 @@ html {
 .slide {
   width: 100%;
   height: 100vh;
-  height: 100svh;
   overflow: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
 
+/* De pagina krijgt een lichte gloed in het midden */
 .page {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background:
-    radial-gradient(
-      ellipse at 50% 45%,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.45) 28%,
-      rgba(244, 237, 228, 0) 68%
-    ),
-    #f4ede4;
 }
 
+/* Plaatst folders boven andere onderdelen */
 .folder-link,
 .main-link {
   position: absolute;
-  z-index: 3;
   padding: 0;
   border: 0;
   background: transparent;
@@ -46,6 +39,7 @@ html {
   transform: translateY(-6px) scale(1.04) rotate(-1deg);
 }
 
+/* Maakt de kleine blauwe folder met CSS */
 .folder {
   position: relative;
   display: block;
@@ -59,6 +53,7 @@ html {
     0 4px 7px rgba(0, 0, 0, 0.16);
 }
 
+/* Maakt het tabje bovenaan de folder */
 .folder::before {
   position: absolute;
   bottom: 88%;
@@ -70,6 +65,7 @@ html {
   content: "";
 }
 
+/* Zet de grote hoofdmap in het midden */
 .main-link {
   top: 50%;
   left: 50%;
@@ -84,19 +80,6 @@ html {
 .main-link:focus-visible {
   outline: none;
   transform: translate(-50%, calc(-50% - 6px)) scale(1.04) rotate(-1deg);
-}
-
-.main-title {
-  z-index: 5;
-  margin-bottom: -6px;
-  padding: 8px 10px;
-  background: #fffefa;
-  color: #171717;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(22px, 3vw, 44px);
-  font-weight: normal;
-  line-height: 0.95;
-  text-align: center;
 }
 
 .main-folder {
@@ -123,6 +106,7 @@ html {
   content: "";
 }
 
+/* Bouwt de The Tribe-folder op */
 .Thetribe-folder {
   overflow: visible;
   border-radius: 0;
@@ -158,10 +142,11 @@ html {
   content: "";
 }
 
+/* Het witte papiertje met de naam */
 .folder-paper {
   position: absolute;
-  z-index: 4;
-  top: -24%;
+  z-index: 3;
+  top: -40%;
   left: 19%;
   display: flex;
   width: 63%;
@@ -180,6 +165,7 @@ html {
   transform: rotate(-2deg);
 }
 
+/* Plaatst de app-iconen op het desktop-scherm */
 .image-icon {
   position: absolute;
   z-index: 5;
@@ -221,31 +207,7 @@ html {
   height: clamp(65px, 8vw, 115px);
 }
 
-.tribe-folder-one {
-  top: 12%;
-  left: 11%;
-}
-
-.tribe-folder-two {
-  top: 12%;
-  right: 11%;
-}
-
-.tribe-folder-three {
-  bottom: 14%;
-  left: 11%;
-}
-
-.tribe-folder-four {
-  right: 47%;
-  bottom: 9%;
-}
-
-.tribe-folder-five {
-  right: 11%;
-  bottom: 12%;
-}
-
+/* Zet de campusfolders op de juiste plekken */
 .amstel-folder-one {
   bottom: 14%;
   left: 14%;
@@ -259,131 +221,6 @@ html {
 .amstel-folder-three {
   right: 14%;
   bottom: 14%;
-}
-
-@media (max-width: 650px) {
-  .folder {
-    width: 50px;
-    height: 38px;
-  }
-
-  .folder::before {
-    top: -7px;
-    bottom: auto;
-    left: 3px;
-    width: 22px;
-    height: 10px;
-  }
-
-  .main-folder {
-    width: 100px;
-    height: 75px;
-  }
-
-  .main-folder::before {
-    top: -13px;
-    bottom: auto;
-    left: 5px;
-    width: 45px;
-    height: 18px;
-  }
-
-  .Thetribe-folder::before {
-    top: 0;
-    left: 5px;
-    width: 45px;
-    height: 18px;
-  }
-
-  .folder-paper {
-    top: -23px;
-    left: 15px;
-    width: 70px;
-    height: 35px;
-    padding: 4px;
-    font-size: 14px;
-  }
-
-  .main-title {
-    padding: 5px 7px;
-    font-size: 18px;
-  }
-
-  .github-home {
-    top: 27%;
-    left: 50%;
-    width: 36px;
-    height: 36px;
-    margin-left: -18px;
-  }
-
-  .tribe-vscodium {
-    top: 14%;
-    left: 50%;
-    width: 36px;
-    height: 36px;
-    margin-left: -18px;
-  }
-
-  .tribe-figma {
-    top: 7%;
-    right: 8%;
-    left: auto;
-    width: 36px;
-    height: 36px;
-  }
-
-  .tribe-folder-one {
-    top: 5%;
-    left: 8%;
-  }
-
-  .tribe-folder-two {
-    top: 20%;
-    right: 8%;
-  }
-
-  .tribe-folder-three {
-    bottom: 17%;
-    left: 8%;
-  }
-
-  .tribe-folder-four {
-    right: 50%;
-    bottom: 12%;
-    margin-right: -25px;
-  }
-
-  .tribe-folder-five {
-    right: 8%;
-    bottom: 12%;
-  }
-
-  .amstel-folder-one {
-    bottom: 17%;
-    left: 8%;
-  }
-
-  .amstel-folder-two {
-    right: 50%;
-    bottom: 17%;
-    margin-right: -25px;
-  }
-
-  .amstel-folder-three {
-    right: 8%;
-    bottom: 17%;
-  }
-
-  .popup-box {
-    padding: 28px 24px;
-    box-shadow: 5px 5px 0 #171717;
-  }
-
-  .popup-close {
-    top: 8px;
-    right: 10px;
-  }
 }
 
 #amstel-campus .folder-link {
@@ -423,6 +260,7 @@ html {
   transform: translateX(-50%) translateY(-6px) scale(1.04) rotate(-1deg);
 }
 
+/* Vormgeving van de pop-ups */
 .campus-window {
   width: min(650px, calc(100vw - 40px));
   margin: auto;
@@ -475,6 +313,7 @@ html {
   outline: none;
 }
 
+/* Zet de informatie van iedere plek naast de afbeelding */
 .window-content {
   background: #fffefa;
 }
@@ -521,6 +360,7 @@ html {
   line-height: 1.45;
 }
 
+/* Verkleint de pop-ups op kleinere schermen */
 @media (max-width: 650px) {
   #amstel-campus .folder-link {
     width: 110px;
@@ -528,7 +368,6 @@ html {
 
   #amstel-campus .folder-name {
     margin-top: 7px;
-
     font-size: 12px;
     white-space: normal;
   }
@@ -551,14 +390,12 @@ html {
   .campus-window {
     width: calc(100vw - 30px);
     max-height: 80vh;
-
     box-shadow: 5px 5px 0 #171717;
   }
 
   .place {
     grid-template-columns: 80px 1fr;
     gap: 12px;
-
     padding: 14px;
   }
 
@@ -576,6 +413,7 @@ html {
   }
 }
 
+/* Plaatst de vijf studenten bovenop de desktoppagina */
 .students {
   position: absolute;
   z-index: 10;
@@ -603,6 +441,7 @@ html {
   transform: translateY(10px);
 }
 
+/* Bepaalt de vijf posities van de studenten */
 #student-1 {
   left: 20%;
   top: 15%;
@@ -660,6 +499,7 @@ html {
   opacity: 0.8;
 }
 
+/* Stijlt de pijlen waarmee je studenten wisselt */
 .arrow {
   position: absolute;
   z-index: 20;

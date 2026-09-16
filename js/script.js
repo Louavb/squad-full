@@ -1,5 +1,6 @@
 let students = [];
 
+// Haalt de studenten uit het JSON-bestand
 fetch("data/students.json")
   .then((response) => {
     if (!response.ok) {
@@ -18,6 +19,7 @@ fetch("data/students.json")
     console.error("Fout bij het laden van de studenten:", error);
   });
 
+// Regelt de studenten en pijltjes op desktop
 function initDesktopStudents() {
   const studentElements = [
     document.querySelector("#student-1"),
@@ -30,7 +32,6 @@ function initDesktopStudents() {
   const nextButton = document.querySelector("#next");
   const previousButton = document.querySelector("#previous");
 
-  // Als deze elementen er niet zijn, is dit niet nodig
   if (!studentElements[0] || !nextButton || !previousButton) {
     return;
   }
@@ -80,6 +81,7 @@ function initDesktopStudents() {
   updateStudents();
 }
 
+// Regelt de studenten, pagina's en puntjes op mobiel
 function initMobileStudents() {
   const studentSlots = document.querySelectorAll("#screen-tribe .student-slot");
   const pageDots = document.querySelector("#pageDots");
@@ -126,6 +128,7 @@ function initMobileStudents() {
     updateDots();
   }
 
+  // Maakt de puntjes onderaan voor elke studentpagina
   function createDots() {
     pageDots.innerHTML = "";
 
@@ -171,6 +174,7 @@ function initMobileStudents() {
     changePage("right");
   }
 
+  // Zorgt voor de animatie bij het wisselen van studenten
   function changePage(direction) {
     screenTribe.classList.add(
       direction === "left" ? "swipe-left" : "swipe-right",
@@ -200,11 +204,12 @@ function initMobileStudents() {
   createDots();
   showStudents();
 
-  // Zet de swipe-functies op window zodat initScreenSwipe ze kan gebruiken
+  // Maakt de mobiele pagina's beschikbaar voor de swipe-functie
   window.__mobileNextPage = nextPage;
   window.__mobilePreviousPage = previousPage;
 }
 
+// Regelt het swipen tussen The Tribe en Amstel Campus
 function initScreenSwipe() {
   const screens = document.querySelector("#screens");
 
@@ -236,8 +241,7 @@ function initScreenSwipe() {
     isDragging = true;
   });
 
-  // Zodra we weten dat het een sleepbeweging is, blokkeren we het
-  // standaardgedrag van de browser (scrollen / pull-to-refresh).
+  // Blokkeert normaal scrollen tijdens het swipen
   screens.addEventListener(
     "touchmove",
     (event) => {
@@ -267,17 +271,17 @@ function initScreenSwipe() {
       }
 
       if (differenceY < 0) {
-        // Omhoog geswiped
+        // Omhoog = naar Amstel Campus
         goToCampus();
       } else {
-        // Omlaag geswiped
+        // Omlaag = terug naar The Tribe
         goToTribe();
       }
 
       return;
     }
 
-    // Horizontale swipe: alleen studenten wisselen op The Tribe scherm
+    // Horizontaal swipen wisselt de studenten
     if (onCampus) {
       return;
     }

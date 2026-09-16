@@ -1,13 +1,14 @@
 @media (max-width: 650px) {
+  /* Basis van het mobiele scherm */
   .phone {
     width: 100%;
     height: 100vh;
-    height: 100svh;
     display: flex;
     justify-content: center;
     overflow: hidden;
   }
 
+  /* Bevat de verschillende mobiele schermen */
   .screens {
     position: relative;
     width: 100%;
@@ -21,6 +22,7 @@
     overscroll-behavior: none;
   }
 
+  /* Opmaak van één volledig mobiel scherm */
   .screen {
     width: 100%;
     height: 100%;
@@ -37,6 +39,7 @@
     gap: 14px;
   }
 
+  /* De apps en studenten staan in drie kolommen */
   .app-grid {
     width: 100%;
     display: grid;
@@ -52,9 +55,9 @@
     margin-top: 34px;
   }
 
+  /* Algemene opmaak van een app/student */
   .icon {
     width: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,6 +109,7 @@
     margin-bottom: 6px;
   }
 
+  /* Notities-widget op het The Tribe scherm */
   .notes-widget {
     width: 100%;
     min-height: 152px;
@@ -167,6 +171,7 @@
     text-align: center;
   }
 
+  /* Widget en knoppen voor de Amstel Campus */
   .campus-widget {
     width: 100%;
     min-height: 130px;
@@ -215,6 +220,7 @@
     transform: translateY(2px);
   }
 
+  /* Puntjes onderaan */
   .page-dots {
     margin-top: auto;
     min-height: 20px;
@@ -236,6 +242,7 @@
     transform: scale(1.7);
   }
 
+  /* Tekst die aangeeft dat je kunt swipen */
   .swipe-hint {
     margin: 10px 0 0;
     color: #8a8a8a;
@@ -250,6 +257,7 @@
     margin-top: auto;
   }
 
+  /* Animaties wanneer je naar een andere studentpagina swipet */
   .swipe-left .student-slot {
     animation: studentLeft 0.3s ease forwards;
   }
@@ -312,12 +320,13 @@
     }
   }
 
+  /* Animatie voor de nieuwe studenten die in beeld komen */
   .student-enter-left {
-    animation: enterRight 0.3s ease;
+    animation: enterRight 0.1s ease;
   }
 
   .student-enter-right {
-    animation: enterLeft 0.3s ease;
+    animation: enterLeft 0.1s ease;
   }
 
   @keyframes enterRight {
@@ -342,6 +351,7 @@
     }
   }
 
+  /* Kleinere aanpassingen voor kleinere telefoons */
   @media (max-width: 370px) {
     .screen {
       padding: 18px 16px;
