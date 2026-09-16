@@ -254,13 +254,30 @@ function initScreenSwipe() {
 
     let startX = 0;
     let startY = 0;
+    let isDragging = false;
 
     screens.addEventListener("touchstart", (event) => {
         startX = event.touches[0].clientX;
         startY = event.touches[0].clientY;
+        isDragging = true;
     });
 
+    // Zodra we weten dat het een sleepbeweging is, blokkeren we het
+    // standaardgedrag van de browser (scrollen / pull-to-refresh).
+    screens.addEventListener(
+        "touchmove",
+        (event) => {
+            if (!isDragging) {
+                return;
+            }
+
+            event.preventDefault();
+        },
+        { passive: false }
+    );
+
     screens.addEventListener("touchend", (event) => {
+        isDragging = false;
 
         const endX = event.changedTouches[0].clientX;
         const endY = event.changedTouches[0].clientY;
