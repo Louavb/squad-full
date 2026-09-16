@@ -1,9 +1,5 @@
 let students = [];
 
-// =========================
-// STUDENTEN LADEN (1x voor desktop én mobile)
-// =========================
-
 fetch("data/students.json")
     .then((response) => {
         if (!response.ok) {
@@ -21,11 +17,6 @@ fetch("data/students.json")
     .catch((error) => {
         console.error("Fout bij het laden van de studenten:", error);
     });
-
-
-/* ==========================================================
-   DESKTOP — 5 studenten, pijlen wisselen per 5
-   ========================================================== */
 
 function initDesktopStudents() {
 
@@ -93,11 +84,6 @@ function initDesktopStudents() {
 
     updateStudents();
 }
-
-
-/* ==========================================================
-   MOBILE — studenten per pagina van 5 + swipes
-   ========================================================== */
 
 function initMobileStudents() {
 
@@ -243,12 +229,6 @@ function initMobileStudents() {
     window.__mobileNextPage = nextPage;
     window.__mobilePreviousPage = previousPage;
 }
-
-
-/* ==========================================================
-   MOBILE — swipe omhoog/omlaag tussen The Tribe en Amstel Campus
-   + swipe links/rechts voor studenten
-   ========================================================== */
 
 function initScreenSwipe() {
 

@@ -23,11 +23,6 @@ img {
     user-select: none;
 }
 
-
-/* =========================
-   DESKTOP / MOBILE WISSELEN
-   ========================= */
-
 .desktop-only {
     display: block;
 }
