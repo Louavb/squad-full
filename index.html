@@ -1,387 +1,431 @@
 <!doctype html>
 <html lang="nl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>The Tribe</title>
 
-    <link rel="stylesheet" href="style/general.css">
-    <link rel="stylesheet" href="style/desktop.css">
-    <link rel="stylesheet" href="style/mobile.css">
-</head>
+    <link rel="stylesheet" href="style/general.css" />
+    <link rel="stylesheet" href="style/desktop.css" />
+    <link rel="stylesheet" href="style/mobile.css" />
+  </head>
 
-<body>
-
+  <body>
     <main>
-        <div class="desktop-only">
-            <section class="slide" id="the-tribe">
+      <div class="desktop-only">
+        <section class="slide" id="the-tribe">
+          <div class="page">
+            <a href="#amstel-campus" class="main-link">
+              <span class="main-folder Thetribe-folder">
+                <span class="folder-paper">The tribe</span>
+              </span>
+            </a>
 
-                <div class="page">
+            <a
+              class="icon-link image-icon github-home"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="assets/apps/github.png" alt="GitHub logo" />
+            </a>
 
-                    <a href="#amstel-campus" class="main-link">
-                        <span class="main-folder Thetribe-folder">
-                            <span class="folder-paper">The tribe</span>
-                        </span>
-                    </a>
+            <div class="icon-link image-icon tribe-vscodium">
+              <img src="assets/apps/codium.png" alt="VSCodium logo" />
+            </div>
 
-                    <a class="icon-link image-icon github-home" href="" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/apps/github.png" alt="GitHub logo">
-                    </a>
+            <a
+              class="icon-link image-icon tribe-figma"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="assets/apps/figma.webp" alt="Figma logo" />
+            </a>
+          </div>
 
-                    <div class="icon-link image-icon tribe-vscodium">
-                        <img src="assets/apps/codium.png" alt="VSCodium logo">
-                    </div>
+          <section class="students">
+            <div class="student" id="student-1"></div>
+            <div class="student" id="student-2"></div>
+            <div class="student" id="student-3"></div>
+            <div class="student" id="student-4"></div>
+            <div class="student" id="student-5"></div>
+          </section>
 
-                    <a class="icon-link image-icon tribe-figma" href="" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/apps/figma.webp" alt="Figma logo">
-                    </a>
+          <button class="arrow arrow-left" id="previous" type="button">
+            &#8592;
+          </button>
 
+          <button class="arrow arrow-right" id="next" type="button">
+            &#8594;
+          </button>
+        </section>
+
+        <section class="slide" id="amstel-campus">
+          <div class="page">
+            <a
+              href="#the-tribe"
+              class="main-link"
+              aria-label="Ga terug naar The Tribe"
+            >
+              <span class="main-folder Thetribe-folder">
+                <span class="folder-paper">Amstel Campus</span>
+              </span>
+            </a>
+
+            <button
+              class="folder-link amstel-folder-one"
+              popovertarget="wibauthuis-popover"
+              aria-label="Open Wibauthuis"
+            >
+              <span class="folder"></span>
+              <span class="folder-name">Wibauthuis</span>
+            </button>
+
+            <button
+              class="folder-link amstel-folder-two"
+              popovertarget="theo-popover"
+              aria-label="Open Theo Thijssenhuis"
+            >
+              <span class="folder"></span>
+              <span class="folder-name">Theo Thijssenhuis</span>
+            </button>
+
+            <button
+              class="folder-link amstel-folder-three"
+              popovertarget="kohnstamm-popover"
+              aria-label="Open Kohnstammhuis"
+            >
+              <span class="folder"></span>
+              <span class="folder-name">Kohnstammhuis</span>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <div class="mobile-only">
+        <div class="phone">
+          <div class="screens" id="screens">
+            <section class="screen" id="screen-tribe">
+              <div class="app-grid top-grid">
+                <div class="icon student-slot"></div>
+
+                <div class="icon app-icon">
+                  <img src="assets/apps/figma.webp" alt="Figma" />
+                  <span>Figma</span>
                 </div>
 
-                <section class="students">
-                    <div class="student" id="student-1"></div>
-                    <div class="student" id="student-2"></div>
-                    <div class="student" id="student-3"></div>
-                    <div class="student" id="student-4"></div>
-                    <div class="student" id="student-5"></div>
-                </section>
+                <div class="icon student-slot"></div>
 
-                <button class="arrow arrow-left" id="previous" type="button">
-                    &#8592;
-                </button>
+                <div class="icon app-icon">
+                  <img src="assets/apps/canva.png" alt="Canva" />
+                  <span>Canva</span>
+                </div>
 
-                <button class="arrow arrow-right" id="next" type="button">
-                    &#8594;
-                </button>
+                <div class="icon student-slot"></div>
 
+                <div class="icon app-icon">
+                  <img src="assets/apps/github.png" alt="GitHub" />
+                  <span>GitHub</span>
+                </div>
+              </div>
+
+              <section class="notes-widget">
+                <header class="notes-header">
+                  <span class="notes-icon" aria-hidden="true"></span>
+                  <span class="notes-label">Notities</span>
+                </header>
+
+                <div class="notes-body">
+                  <h1>The Tribe</h1>
+                </div>
+              </section>
+
+              <div class="app-grid bottom-grid">
+                <div class="icon student-slot"></div>
+
+                <div class="icon app-icon">
+                  <img src="assets/apps/codium.png" alt="VSCodium" />
+                  <span>VSCodium</span>
+                </div>
+
+                <div class="icon app-icon">
+                  <img src="assets/apps/teams.webp" alt="Teams" />
+                  <span>Teams</span>
+                </div>
+
+                <div class="icon app-icon">
+                  <img src="assets/apps/chrome.webp" alt="Chroma" />
+                  <span>chrome</span>
+                </div>
+
+                <div class="icon student-slot"></div>
+
+                <div class="icon app-icon">
+                  <img src="assets/apps/safari.png" alt="Safari" />
+                  <span>Safari</span>
+                </div>
+              </div>
+
+              <div class="page-dots" id="pageDots"></div>
+
+              <p class="swipe-hint">Swipe omhoog</p>
             </section>
 
-            <section class="slide" id="amstel-campus">
+            <section class="screen" id="screen-campus">
+              <div class="campus-widget">
+                <header class="campus-header">
+                  <span class="campus-icon">A</span>
+                  <span class="campus-label">Locaties</span>
+                </header>
 
-                <div class="page">
+                <div class="campus-body">
+                  <h1>Amstel Campus</h1>
 
-                    <a href="#the-tribe" class="main-link" aria-label="Ga terug naar The Tribe">
-                        <span class="main-folder Thetribe-folder">
-                            <span class="folder-paper">Amstel Campus</span>
-                        </span>
-                    </a>
+                  <button
+                    class="campus-row"
+                    type="button"
+                    popovertarget="wibauthuis-popover"
+                  >
+                    Wibauthuis
+                    <span>›</span>
+                  </button>
 
-                    <button class="folder-link amstel-folder-one" popovertarget="wibauthuis-popover"
-                        aria-label="Open Wibauthuis">
-                        <span class="folder"></span>
-                        <span class="folder-name">Wibauthuis</span>
-                    </button>
+                  <button
+                    class="campus-row"
+                    type="button"
+                    popovertarget="kohnstamm-popover"
+                  >
+                    Kohnstammhuis
+                    <span>›</span>
+                  </button>
 
-                    <button class="folder-link amstel-folder-two" popovertarget="theo-popover"
-                        aria-label="Open Theo Thijssenhuis">
-                        <span class="folder"></span>
-                        <span class="folder-name">Theo Thijssenhuis</span>
-                    </button>
-
-                    <button class="folder-link amstel-folder-three" popovertarget="kohnstamm-popover"
-                        aria-label="Open Kohnstammhuis">
-                        <span class="folder"></span>
-                        <span class="folder-name">Kohnstammhuis</span>
-                    </button>
-
+                  <button
+                    class="campus-row"
+                    type="button"
+                    popovertarget="theo-popover"
+                  >
+                    Theo Thijssenhuis
+                    <span>›</span>
+                  </button>
                 </div>
+              </div>
 
+              <p class="swipe-hint swipe-hint-down">Swipe omlaag</p>
             </section>
-
+          </div>
         </div>
+      </div>
 
-        <div class="mobile-only">
+      <div class="campus-window" id="wibauthuis-popover" popover>
+        <header class="window-header">
+          <h2>Wibauthuis</h2>
 
-            <div class="phone">
+          <button
+            class="close-button"
+            popovertarget="wibauthuis-popover"
+            popovertargetaction="hide"
+            aria-label="Sluit Wibauthuis"
+          >
+            ×
+          </button>
+        </header>
 
-                <div class="screens" id="screens">
-
-                    <section class="screen" id="screen-tribe">
-
-                        <div class="app-grid top-grid">
-
-                            <div class="icon student-slot"></div>
-
-                            <div class="icon app-icon">
-                                <img src="assets/apps/figma.webp" alt="Figma">
-                                <span>Figma</span>
-                            </div>
-
-                            <div class="icon student-slot"></div>
-
-                            <div class="icon app-icon">
-                                <img src="assets/apps/canva.png" alt="Canva">
-                                <span>Canva</span>
-                            </div>
-
-                            <div class="icon student-slot"></div>
-
-                            <div class="icon app-icon">
-                                <img src="assets/apps/github.png" alt="GitHub">
-                                <span>GitHub</span>
-                            </div>
-
-                        </div>
-
-                        <section class="notes-widget">
-
-                            <header class="notes-header">
-                                <span class="notes-icon" aria-hidden="true"></span>
-                                <span class="notes-label">Notities</span>
-                            </header>
-
-                            <div class="notes-body">
-                                <h1>The Tribe</h1>
-                            </div>
-
-                        </section>
-
-                        <div class="app-grid bottom-grid">
-
-                            <div class="icon student-slot"></div>
-
-                            <div class="icon app-icon">
-                                <img src="assets/apps/codium.png" alt="VSCodium">
-                                <span>VSCodium</span>
-                            </div>
-
-                            <div class="icon app-icon">
-                                <img src="assets/apps/teams.webp" alt="Teams">
-                                <span>Teams</span>
-                            </div>
-
-                            <div class="icon app-icon">
-                                <img src="assets/apps/chrome.webp" alt="Chroma">
-                                <span>Chrome</span>
-                            </div>
-
-                            <div class="icon student-slot"></div>
-
-                            <div class="icon app-icon">
-                                <img src="assets/apps/safari.png" alt="Safari">
-                                <span>Safari</span>
-                            </div>
-
-                        </div>
-
-                        <div class="page-dots" id="pageDots"></div>
-
-                        <p class="swipe-hint">Swipe omhoog</p>
-
-                    </section>
-
-                    <section class="screen" id="screen-campus">
-
-                        <div class="campus-widget">
-                            <h1>Amstel Campus</h1>
-                        </div>
-
-                        <button class="campus-row" type="button" popovertarget="wibauthuis-popover">
-                            Wibauthuis
-                        </button>
-
-                        <button class="campus-row" type="button" popovertarget="kohnstamm-popover">
-                            Kohnstammhuis
-                        </button>
-
-                        <button class="campus-row" type="button" popovertarget="theo-popover">
-                            Theo Thijssenhuis
-                        </button>
-
-                        <p class="swipe-hint swipe-hint-down">Swipe omlaag</p>
-
-                    </section>
-
-                </div>
-
+        <div class="window-content">
+          <article class="place">
+            <div class="place-image">
+              <img
+                src="assets/wibauthuis-bezinningsruimte.jpeg"
+                alt="Bezinningsruimte in het Wibauthuis"
+              />
             </div>
 
-        </div>
-
-        <div class="campus-window" id="wibauthuis-popover" popover>
-
-            <header class="window-header">
-                <h2>Wibauthuis</h2>
-
-                <button class="close-button" popovertarget="wibauthuis-popover" popovertargetaction="hide"
-                    aria-label="Sluit Wibauthuis">
-                    ×
-                </button>
-            </header>
-
-            <div class="window-content">
-
-                <article class="place">
-                    <div class="place-image">
-                        <img src="assets/wibauthuis-bezinningsruimte.jpeg" alt="Bezinningsruimte in het Wibauthuis">
-                    </div>
-
-                    <div>
-                        <h3>Bezinningsruimte</h3>
-                        <p><strong>2de verdieping</strong></p>
-                        <p>
-                            Een rustige plek waar studenten terechtkunnen voor gebed, bezinning of een moment voor
-                            zichzelf.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="place">
-                    <div class="place-image">
-                        <img src="assets/wibauthuis-studieplek.jpg" alt="Studieplek in het Wibauthuis">
-                    </div>
-
-                    <div>
-                        <h3>Studieplekken</h3>
-                        <p><strong>1e en 2e verdieping</strong></p>
-                        <p>
-                            Hier kun je individueel werken of samen
-                            met je team aan opdrachten werken.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="place">
-                    <div class="place-image">
-                        <img src="assets/wibauthuis-restaurant.jpg" alt="Restaurant in het Wibauthuis">
-                    </div>
-
-                    <div>
-                        <h3>Restaurant</h3>
-                        <p><strong>Begane grond</strong></p>
-                        <p>
-                            Een plek waar je lunch, snacks en drinken
-                            kunt halen tijdens je schooldag.
-                        </p>
-                    </div>
-                </article>
-
+            <div>
+              <h3>Bezinningsruimte</h3>
+              <p><strong>2de verdieping</strong></p>
+              <p>
+                Een rustige plek waar studenten terechtkunnen voor gebed,
+                bezinning of een moment voor zichzelf.
+              </p>
             </div>
-        </div>
+          </article>
 
-        <div class="campus-window" id="theo-popover" popover>
-
-            <header class="window-header">
-                <h2>Theo Thijssenhuis</h2>
-
-                <button class="close-button" popovertarget="theo-popover" popovertargetaction="hide"
-                    aria-label="Sluit Theo Thijssenhuis">
-                    ×
-                </button>
-            </header>
-
-            <div class="window-content">
-
-                <article class="place">
-                    <div class="place-image">
-                        <img src="assets/tth-makerslab.jpg" alt="Makerslab in het Theo Thijssenhuis">
-                    </div>
-
-                    <div>
-                        <h3>Makerslab</h3>
-                        <p><strong>Ruimte 00B20</strong></p>
-                        <p>
-                            Een open werkplaats voor HvA-studenten waar je kunt experimenteren en dingen kunt maken met
-                            onder andere 3D-printers, lasersnijders en andere gereedschappen.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="place">
-                    <div class="place-image">
-                        <img src="assets/tth-medialounge.jpg" alt="Medialounge in het Theo Thijssenhuis">
-                    </div>
-
-                    <div>
-                        <h3>Medialounge</h3>
-                        <p><strong>3e verdieping</strong></p>
-                        <p>
-                            Een fijne werkplek om samen met je team te zitten,
-                            te overleggen en aan projecten te werken.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="place">
-                    <div class="place-image">foto nemen</div>
-
-                    <div>
-                        <h3>Stille werkplek</h3>
-                        <p><strong>4e verdieping</strong></p>
-                        <p>
-                            Een rustige plek waar je je even kunt afzonderen om geconcentreerd aan je werk te zitten.
-                        </p>
-                    </div>
-                </article>
-
+          <article class="place">
+            <div class="place-image">
+              <img
+                src="assets/wibauthuis-studieplek.jpg"
+                alt="Studieplek in het Wibauthuis"
+              />
             </div>
-        </div>
 
-        <div class="campus-window" id="kohnstamm-popover" popover>
-
-            <header class="window-header">
-                <h2>Kohnstammhuis</h2>
-
-                <button class="close-button" popovertarget="kohnstamm-popover" popovertargetaction="hide"
-                    aria-label="Sluit Kohnstammhuis">
-                    ×
-                </button>
-            </header>
-
-            <div class="window-content">
-
-                <article class="place">
-                    <div class="place-image">
-                        <img src="assets/ksh-kohnstammhof.jpg" alt="De Kohnstammhof">
-                    </div>
-
-                    <div>
-                        <h3>Kohnstammhof</h3>
-                        <p><strong>Tussen het Kohnstammhuis en Theo Thijssenhuis</strong></p>
-                        <p>
-                            Een buitenplein waar je tussen de lessen door kunt zitten, lunchen of even van de zon kunt
-                            genieten.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="place">
-                    <div class="place-image">
-                        <img src="assets/ksh-food.jpg" alt="Food shop in het Kohnstammhuis">
-                    </div>
-
-                    <div>
-                        <h3>Food shop</h3>
-                        <p><strong>1e verdieping</strong></p>
-                        <p>
-                            Een handige plek om tussen de lessen door iets te eten of drinken te halen.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="place">
-                    <div class="place-image">
-                        <img src="assets/ksh-bieb.jpg" alt="Bibliotheek in het Kohnstammhuis">
-                    </div>
-
-                    <div>
-                        <h3>Bibliotheek</h3>
-                        <p>
-                            Hier kun je rustig studeren, aan opdrachten werken en boeken of andere studiematerialen
-                            gebruiken.
-                        </p>
-                    </div>
-                </article>
-
+            <div>
+              <h3>Studieplekken</h3>
+              <p><strong>1e en 2e verdieping</strong></p>
+              <p>
+                Hier kun je individueel werken of samen met je team aan
+                opdrachten werken.
+              </p>
             </div>
-        </div>
+          </article>
 
+          <article class="place">
+            <div class="place-image">
+              <img
+                src="assets/wibauthuis-restaurant.jpg"
+                alt="Restaurant in het Wibauthuis"
+              />
+            </div>
+
+            <div>
+              <h3>Restaurant</h3>
+              <p><strong>Begane grond</strong></p>
+              <p>
+                Een plek waar je lunch, snacks en drinken kunt halen tijdens je
+                schooldag.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="campus-window" id="theo-popover" popover>
+        <header class="window-header">
+          <h2>Theo Thijssenhuis</h2>
+
+          <button
+            class="close-button"
+            popovertarget="theo-popover"
+            popovertargetaction="hide"
+            aria-label="Sluit Theo Thijssenhuis"
+          >
+            ×
+          </button>
+        </header>
+
+        <div class="window-content">
+          <article class="place">
+            <div class="place-image">
+              <img
+                src="assets/tth-makerslab.jpg"
+                alt="Makerslab in het Theo Thijssenhuis"
+              />
+            </div>
+
+            <div>
+              <h3>Makerslab</h3>
+              <p><strong>Ruimte 00B20</strong></p>
+              <p>
+                Een open werkplaats voor HvA-studenten waar je kunt
+                experimenteren en dingen kunt maken met onder andere
+                3D-printers, lasersnijders en andere gereedschappen.
+              </p>
+            </div>
+          </article>
+
+          <article class="place">
+            <div class="place-image">
+              <img
+                src="assets/tth-medialounge.jpg"
+                alt="Medialounge in het Theo Thijssenhuis"
+              />
+            </div>
+
+            <div>
+              <h3>Medialounge</h3>
+              <p><strong>3e verdieping</strong></p>
+              <p>
+                Een fijne werkplek om samen met je team te zitten, te overleggen
+                en aan projecten te werken.
+              </p>
+            </div>
+          </article>
+
+          <article class="place">
+            <div class="place-image">foto nemen</div>
+
+            <div>
+              <h3>Stille werkplek</h3>
+              <p><strong>4e verdieping</strong></p>
+              <p>
+                Een rustige plek waar je je even kunt afzonderen om
+                geconcentreerd aan je werk te zitten.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="campus-window" id="kohnstamm-popover" popover>
+        <header class="window-header">
+          <h2>Kohnstammhuis</h2>
+
+          <button
+            class="close-button"
+            popovertarget="kohnstamm-popover"
+            popovertargetaction="hide"
+            aria-label="Sluit Kohnstammhuis"
+          >
+            ×
+          </button>
+        </header>
+
+        <div class="window-content">
+          <article class="place">
+            <div class="place-image">
+              <img src="assets/ksh-kohnstammhof.jpg" alt="De Kohnstammhof" />
+            </div>
+
+            <div>
+              <h3>Kohnstammhof</h3>
+              <p>
+                <strong>Tussen het Kohnstammhuis en Theo Thijssenhuis</strong>
+              </p>
+              <p>
+                Een buitenplein waar je tussen de lessen door kunt zitten,
+                lunchen of even van de zon kunt genieten.
+              </p>
+            </div>
+          </article>
+
+          <article class="place">
+            <div class="place-image">
+              <img
+                src="assets/ksh-food.jpg"
+                alt="Food shop in het Kohnstammhuis"
+              />
+            </div>
+
+            <div>
+              <h3>Food shop</h3>
+              <p><strong>1e verdieping</strong></p>
+              <p>
+                Een handige plek om tussen de lessen door iets te eten of
+                drinken te halen.
+              </p>
+            </div>
+          </article>
+
+          <article class="place">
+            <div class="place-image">
+              <img
+                src="assets/ksh-bieb.jpg"
+                alt="Bibliotheek in het Kohnstammhuis"
+              />
+            </div>
+
+            <div>
+              <h3>Bibliotheek</h3>
+              <p>
+                Hier kun je rustig studeren, aan opdrachten werken en boeken of
+                andere studiematerialen gebruiken.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
     </main>
 
     <script src="js/script.js"></script>
-
-</body>
-
+  </body>
 </html>
