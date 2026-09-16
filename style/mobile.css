@@ -1,26 +1,18 @@
 @media (max-width: 650px) {
-  /* =========================
-       TELEFOON FRAME
-       ========================= */
-
   .phone {
     width: 100%;
     height: 100vh;
     height: 100svh;
-
     display: flex;
     justify-content: center;
-
     overflow: hidden;
   }
 
   .screens {
     position: relative;
-
     width: 100%;
     max-width: 430px;
     height: 100%;
-
     transition: transform 0.35s ease;
   }
 
@@ -32,12 +24,9 @@
   .screen {
     width: 100%;
     height: 100%;
-
     padding: 24px 22px;
-
     display: flex;
     flex-direction: column;
-
     touch-action: none;
     overscroll-behavior: none;
     user-select: none;
@@ -48,16 +37,10 @@
     gap: 14px;
   }
 
-  /* =========================
-       APP / STUDENT GRID
-       ========================= */
-
   .app-grid {
     width: 100%;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
     column-gap: 18px;
   }
 
@@ -75,7 +58,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     font-family: Georgia, "Times New Roman", serif;
     font-size: 14px;
     text-align: center;
@@ -86,10 +68,8 @@
   .student-slot.empty::before {
     width: 74px;
     height: 74px;
-
     object-fit: cover;
     border-radius: 6px;
-
     margin-bottom: 6px;
   }
 
@@ -99,7 +79,6 @@
 
   .student-slot {
     cursor: pointer;
-
     transition:
       transform 0.3s ease,
       opacity 0.3s ease;
@@ -107,13 +86,11 @@
 
   .student-photo {
     display: block;
-
     background: #ddd;
   }
 
   .student-slot span {
     max-width: 100%;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -125,27 +102,17 @@
 
   .student-slot.empty::before {
     content: "";
-
     display: block;
-
     margin-bottom: 6px;
   }
-
-  /* =========================
-       NOTES WIDGET ("The Tribe")
-       ========================= */
 
   .notes-widget {
     width: 100%;
     min-height: 152px;
-
     border: 3px solid #171717;
     border-radius: 22px;
-
     background: #fffefa;
-
     box-shadow: 5px 5px 0 #171717;
-
     overflow: hidden;
   }
 
@@ -153,18 +120,14 @@
     display: flex;
     align-items: center;
     gap: 8px;
-
     padding: 10px 14px 0;
   }
 
   .notes-icon {
     display: block;
-
     width: 18px;
     height: 18px;
-
     border-radius: 4px;
-
     background:
       repeating-linear-gradient(
         to bottom,
@@ -179,11 +142,9 @@
 
   .notes-label {
     color: #7a7a7a;
-
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: bold;
-
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
@@ -192,58 +153,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     min-height: 110px;
-
     padding: 8px 14px 18px;
   }
 
   .notes-body h1 {
     margin: 0;
-
     color: #171717;
-
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(38px, 11vw, 54px);
     font-weight: normal;
     line-height: 0.95;
-
     text-align: center;
   }
-
-  /* =========================
-       AMSTEL CAMPUS SCHERM
-       ========================= */
 
   .campus-widget {
     width: 100%;
     min-height: 130px;
-
     margin-bottom: 8px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border: 3px solid #171717;
     border-radius: 22px;
-
     background: #fffefa;
-
     box-shadow: 5px 5px 0 #171717;
   }
 
   .campus-widget h1 {
     margin: 0;
     padding: 0 12px;
-
     color: #171717;
-
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(32px, 9vw, 46px);
     font-weight: normal;
     line-height: 1.02;
-
     text-align: center;
   }
 
