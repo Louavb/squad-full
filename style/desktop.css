@@ -1,0 +1,783 @@
+html {
+    scroll-snap-type: y mandatory;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.45) 28%,
+            rgba(244, 237, 228, 0) 68%
+        ),
+        #f4ede4;
+}
+
+.folder-link,
+.main-link {
+    position: absolute;
+    z-index: 3;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.folder-link {
+    transition: transform 0.2s ease;
+}
+
+.folder-link:hover,
+.folder-link:focus-visible {
+    outline: none;
+    transform: translateY(-6px) scale(1.04) rotate(-1deg);
+}
+
+.folder {
+    position: relative;
+    display: block;
+    width: clamp(66px, 8vw, 120px);
+    height: clamp(48px, 5.8vw, 86px);
+    border-radius: 5px 5px 10px 10px;
+    background: linear-gradient(145deg, #a6ddfb, #5d9fd1);
+    box-shadow:
+        inset 0 3px 5px rgba(255, 255, 255, 0.6),
+        inset 0 -6px 7px rgba(28, 91, 137, 0.2),
+        0 4px 7px rgba(0, 0, 0, 0.16);
+}
+
+.folder::before {
+    position: absolute;
+    bottom: 88%;
+    left: 4px;
+    width: 46%;
+    height: 30%;
+    border-radius: 7px 13px 0 0;
+    background: linear-gradient(145deg, #c5edff, #72afd8);
+    content: "";
+}
+
+.main-link {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+}
+
+.main-link:hover,
+.main-link:focus-visible {
+    outline: none;
+    transform: translate(-50%, calc(-50% - 6px)) scale(1.04) rotate(-1deg);
+}
+
+.main-title {
+    z-index: 5;
+    margin-bottom: -6px;
+    padding: 8px 10px;
+    background: #fffefa;
+    color: #171717;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(22px, 3vw, 44px);
+    font-weight: normal;
+    line-height: 0.95;
+    text-align: center;
+}
+
+.main-folder {
+    position: relative;
+    display: block;
+    width: clamp(170px, 22vw, 320px);
+    height: clamp(125px, 16vw, 225px);
+    border-radius: 12px 12px 20px 20px;
+    background: linear-gradient(145deg, #a6ddfb, #5d9fd1);
+    box-shadow:
+        inset 0 6px 8px rgba(255, 255, 255, 0.6),
+        inset 0 -10px 12px rgba(28, 91, 137, 0.22),
+        0 8px 14px rgba(0, 0, 0, 0.16);
+}
+
+.main-folder::before {
+    position: absolute;
+    bottom: 88%;
+    left: 8px;
+    width: 45%;
+    height: 31%;
+    border-radius: 12px 18px 0 0;
+    background: linear-gradient(145deg, #c5edff, #72afd8);
+    content: "";
+}
+
+.Thetribe-folder {
+    overflow: visible;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.Thetribe-folder::before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 8px;
+    width: 45%;
+    height: 31%;
+    border-radius: 12px 18px 0 0;
+    background: linear-gradient(145deg, #c5edff, #72afd8);
+    content: "";
+}
+
+.Thetribe-folder::after {
+    position: absolute;
+    z-index: 3;
+    top: 23%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(145deg, #a6ddfb, #5d9fd1);
+    box-shadow:
+        inset 0 6px 8px rgba(255, 255, 255, 0.6),
+        inset 0 -10px 12px rgba(28, 91, 137, 0.22),
+        0 8px 14px rgba(0, 0, 0, 0.16);
+    content: "";
+}
+
+.folder-paper {
+    position: absolute;
+    z-index: 4;
+    top: -24%;
+    left: 19%;
+    display: flex;
+    width: 63%;
+    height: 67%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid #171717;
+    background: #fffefa;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.14);
+    color: #171717;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(22px, 3vw, 44px);
+    line-height: 0.95;
+    text-align: center;
+    transform: rotate(-2deg);
+}
+
+.image-icon {
+    position: absolute;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    user-select: none;
+}
+
+.image-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.github-home {
+    top: 40%;
+    left: 80%;
+    width: clamp(48px, 6vw, 82px);
+    height: clamp(48px, 6vw, 82px);
+}
+
+.tribe-vscodium {
+    top: 13%;
+    left: 48%;
+    width: clamp(40px, 5vw, 68px);
+    height: clamp(40px, 5vw, 68px);
+}
+
+.tribe-figma {
+    top: 42%;
+    left: 20%;
+    width: clamp(65px, 8vw, 115px);
+    height: clamp(65px, 8vw, 115px);
+}
+
+
+.tribe-folder-one {
+    top: 12%;
+    left: 11%;
+}
+
+.tribe-folder-two {
+    top: 12%;
+    right: 11%;
+}
+
+.tribe-folder-three {
+    bottom: 14%;
+    left: 11%;
+}
+
+.tribe-folder-four {
+    right: 47%;
+    bottom: 9%;
+}
+
+.tribe-folder-five {
+    right: 11%;
+    bottom: 12%;
+}
+
+.amstel-folder-one {
+    bottom: 14%;
+    left: 14%;
+}
+
+.amstel-folder-two {
+    right: 47%;
+    bottom: 14%;
+}
+
+.amstel-folder-three {
+    right: 14%;
+    bottom: 14%;
+}
+
+@media (max-width: 650px) {
+
+    .folder {
+        width: 50px;
+        height: 38px;
+    }
+
+    .folder::before {
+        top: -7px;
+        bottom: auto;
+        left: 3px;
+        width: 22px;
+        height: 10px;
+    }
+
+    .main-folder {
+        width: 100px;
+        height: 75px;
+    }
+
+    .main-folder::before {
+        top: -13px;
+        bottom: auto;
+        left: 5px;
+        width: 45px;
+        height: 18px;
+    }
+
+    .Thetribe-folder::before {
+        top: 0;
+        left: 5px;
+        width: 45px;
+        height: 18px;
+    }
+
+    .folder-paper {
+        top: -23px;
+        left: 15px;
+        width: 70px;
+        height: 35px;
+        padding: 4px;
+        font-size: 14px;
+    }
+
+    .main-title {
+        padding: 5px 7px;
+        font-size: 18px;
+    }
+
+    .github-home {
+        top: 27%;
+        left: 50%;
+        width: 36px;
+        height: 36px;
+        margin-left: -18px;
+    }
+
+    .tribe-vscodium {
+        top: 14%;
+        left: 50%;
+        width: 36px;
+        height: 36px;
+        margin-left: -18px;
+    }
+
+    .tribe-figma {
+        top: 7%;
+        right: 8%;
+        left: auto;
+        width: 36px;
+        height: 36px;
+    }
+
+    .tribe-folder-one {
+        top: 5%;
+        left: 8%;
+    }
+
+    .tribe-folder-two {
+        top: 20%;
+        right: 8%;
+    }
+
+    .tribe-folder-three {
+        bottom: 17%;
+        left: 8%;
+    }
+
+    .tribe-folder-four {
+        right: 50%;
+        bottom: 12%;
+        margin-right: -25px;
+    }
+
+    .tribe-folder-five {
+        right: 8%;
+        bottom: 12%;
+    }
+
+    .amstel-folder-one {
+        bottom: 17%;
+        left: 8%;
+    }
+
+    .amstel-folder-two {
+        right: 50%;
+        bottom: 17%;
+        margin-right: -25px;
+    }
+
+    .amstel-folder-three {
+        right: 8%;
+        bottom: 17%;
+    }
+
+    .popup-box {
+        padding: 28px 24px;
+        box-shadow: 5px 5px 0 #171717;
+    }
+
+    .popup-close {
+        top: 8px;
+        right: 10px;
+    }
+}
+
+
+/* ================================= */
+/* AMSTEL CAMPUS                     */
+/* ================================= */
+
+
+/* Namen onder de drie kleine mapjes */
+
+#amstel-campus .folder-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+#amstel-campus .folder-name {
+    margin-top: 10px;
+
+    color: #171717;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(14px, 1.5vw, 20px);
+
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+/* De drie mapjes netjes verdelen */
+
+#amstel-campus .amstel-folder-one {
+    bottom: 8%;
+    left: 12%;
+}
+
+#amstel-campus .amstel-folder-two {
+    bottom: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+#amstel-campus .amstel-folder-three {
+    right: 12%;
+    bottom: 8%;
+}
+
+
+/* Omdat mapje 2 translateX gebruikt,
+   moeten we hover apart behandelen */
+
+#amstel-campus .amstel-folder-two:hover,
+#amstel-campus .amstel-folder-two:focus-visible {
+    transform:
+        translateX(-50%)
+        translateY(-6px)
+        scale(1.04)
+        rotate(-1deg);
+}
+
+
+/* ================================= */
+/* AMSTEL CAMPUS POPOVERS            */
+/* ================================= */
+
+.campus-window {
+    width: min(650px, calc(100vw - 40px));
+
+    margin: auto;
+    padding: 0;
+
+    border: 3px solid #171717;
+    border-radius: 0;
+
+    background: #fffefa;
+    color: #171717;
+
+    box-shadow: none;
+    overflow: hidden;
+}
+
+
+/* Donkere achtergrond achter popup */
+
+.campus-window::backdrop {
+    background: rgba(23, 23, 23, 0.3);
+}
+
+
+/* Bovenste balk van popup */
+
+.window-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 55px;
+
+    padding: 12px 16px;
+
+    border-bottom: 2px solid #171717;
+
+    background: #f4ede4;
+}
+
+
+/* Titel popup */
+
+.window-header h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: bold;
+}
+
+
+/* Sluitknop */
+
+.close-button {
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #171717;
+
+    font-size: 34px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus-visible {
+    color: #5d9fd1;
+    outline: none;
+}
+
+
+/* ================================= */
+/* SCROLLBARE INHOUD                 */
+/* ================================= */
+
+.window-content {
+    background: #fffefa;
+}
+
+
+/* Elke plek in de popup */
+
+.place {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 18px;
+
+    min-height: 140px;
+    padding: 20px;
+
+    align-items: center;
+
+    border-bottom: 2px solid #171717;
+}
+
+.place:last-child {
+    border-bottom: 0;
+}
+
+
+/* Hier komen later foto's */
+
+.place-image {
+    width: 120px;
+    height: 100px;
+
+    border: 2px solid #171717;
+
+    background: #f4ede4;
+
+    overflow: hidden;
+}
+
+
+/* Als je later een img in place-image zet */
+
+.place-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Teksten */
+
+.place h3 {
+    margin: 0 0 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+}
+
+.place p {
+    margin: 5px 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+
+/* ================================= */
+/* MOBILE (bestaande responsive regels van style.css) */
+/* ================================= */
+
+@media (max-width: 650px) {
+
+    #amstel-campus .folder-link {
+        width: 110px;
+    }
+
+    #amstel-campus .folder-name {
+        margin-top: 7px;
+
+        font-size: 12px;
+        white-space: normal;
+    }
+
+    #amstel-campus .amstel-folder-one {
+        bottom: 17%;
+        left: 5%;
+    }
+
+    #amstel-campus .amstel-folder-two {
+        bottom: 17%;
+        left: 50%;
+    }
+
+    #amstel-campus .amstel-folder-three {
+        right: 5%;
+        bottom: 17%;
+    }
+
+    .campus-window {
+        width: calc(100vw - 30px);
+        max-height: 80vh;
+
+        box-shadow: 5px 5px 0 #171717;
+    }
+
+    .place {
+        grid-template-columns: 80px 1fr;
+        gap: 12px;
+
+        padding: 14px;
+    }
+
+    .place-image {
+        width: 80px;
+        height: 70px;
+    }
+
+    .place h3 {
+        font-size: 18px;
+    }
+
+    .place p {
+        font-size: 14px;
+    }
+}
+
+
+/* ================================= */
+/* STUDENTEN (van styles.css)        */
+/* ================================= */
+
+.students {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.student {
+    position: absolute;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    pointer-events: auto;
+}
+
+.student.changing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#student-1 {
+    left: 20%;
+    top: 15%;
+}
+
+#student-2 {
+    right: 20%;
+    top: 15%;
+}
+
+#student-3 {
+    left: 10%;
+    top: 60%;
+}
+
+#student-4 {
+    right: 10%;
+    top: 60%;
+}
+
+#student-5 {
+    left: 40%;
+    bottom: 10%;
+}
+
+.student a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
+    cursor: pointer;
+}
+
+.student img {
+    display: block;
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.student p {
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.student a:hover img {
+    transform: scale(1.08);
+    opacity: 0.8;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    font-size: 42px;
+    font-weight: 400;
+    cursor: pointer;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.arrow:hover {
+    opacity: 0.5;
+}
+
+.arrow-left {
+    left: 3%;
+}
+
+.arrow-right {
+    right: 3%;
+}
