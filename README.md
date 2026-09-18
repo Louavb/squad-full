@@ -3,6 +3,7 @@ The Tribe – Squad Page
  Website
 
 Bekijk onze website via:
+https://edu.nl/4w8ny
 
 The Tribe – Squad Page
 
